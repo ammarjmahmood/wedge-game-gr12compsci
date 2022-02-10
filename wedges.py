@@ -19,14 +19,18 @@ num_cards_in_hand = 2
 whichMessage = 1
 
 
-def init_deck(deck_values, num_cards, num_cards_values, num_suits):
+def init_deck(card_deck, num_cards, num_suits, num_cards_values):
     deck_values = [ num_cards_values * [True] for i in range(num_suits) ]
-    return deck_values, num_cards
-
-# init_deck(card_deck, num_cards, num_cards_values, num_suits)
+    num_cards = num_suits * num_cards_values
     
+
+#card_deck, num_cards_in_deck = init_deck(card_deck, num_suits - 1 , num_cards -1, num_cards_values)
+
 def init_pot(pot):
     pot = [ 500, 500, 1000 ]
+    return pot
+
+#pot = init_pot(pot)
 
 def get_a_card( deck_values, num_suits, num_cards ):
     suit_choice = random.randint(0, num_suits)
@@ -37,11 +41,13 @@ def get_a_card( deck_values, num_suits, num_cards ):
     deck_values[suit_choice][card_choice] = False
     return( suit_choice, card_choice )
 
+#card_picked, suit_picked = get_a_card(card_deck, num_suits - 1 , num_cards -1)
+
 def get_a_hand(card_deck, player_hand, num_cards_in_hand):
     player_hand = []
     for i in range(num_cards_in_hand):
         card_picked, suit_picked = get_a_card(card_deck, num_suits - 1 , num_cards -1)
-    player_hand = [ [card_picked, suit_picked] [card_picked, suit_picked] ]
+        # append card_picked and suit_picked to player hand
     return player_hand
 
 def what_bet(pot, ante, bet, message_list, WhichMessage):
@@ -73,8 +79,6 @@ def switch_player(which_player):
 def quit(pot):
     pass
 
-
-card_picked, suit_picked = get_a_card(card_deck, num_suits - 1 , num_cards -1)
 
 while keep_going:
     pass
