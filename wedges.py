@@ -29,8 +29,7 @@ def init_pot(pot):
     pot = [500, 500, 1000]
     return pot
 
-(card_deck,num_cards) = init_deck(num_cards, num_suits, num_cards_values, reset_deck)
+( card_deck, num_cards ) = init_deck(num_cards, num_suits, num_cards_values, reset_deck)
 pot = init_pot(pot)
 
-
-
+print(num_cards)
