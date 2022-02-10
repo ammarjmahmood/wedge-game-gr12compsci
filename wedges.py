@@ -18,7 +18,6 @@ bet = 0
 num_cards_in_hand = 2
 whichMessage = 1
 
-
 def init_deck( num_cards , num_suits, num_cards_values, reset_deck):
     if num_cards < reset_deck:
         card_deck = [num_cards_values * [True] for i in range (num_suits)]
@@ -32,8 +31,6 @@ def init_pot(pot):
 
 (card_deck,num_cards) = init_deck(num_cards, num_suits, num_cards_values, reset_deck)
 pot = init_pot(pot)
-
-
 
 
 
