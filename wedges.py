@@ -6,10 +6,10 @@ message_list = ["Place a bet", "Bet too high", "You lost this round as the card 
 keep_going = True
 pot = []
 #card_deck = [ (len(card_names)-1) * [True] for i in range(suits) ]
-card_deck = [ ]
+card_deck = []
 num_suits = 4
 num_cards_values = 13
-num_cards = num_cards_values * num_suits
+num_cards = 0
 which_player = False
 reset_deck = 4
 ante = 20
@@ -18,7 +18,19 @@ bet = 0
 num_cards_in_hand = 2
 whichMessage = 1
 
+def init_deck( num_cards , num_suits, num_cards_values, reset_deck):
+    if num_cards < reset_deck:
+        card_deck = [num_cards_values * [True] for i in range (num_suits)]
+        num_cards = num_suits * num_cards_values
+        return card_deck,num_cards
 
-def init_deck(deck_values, num_cards, num_cards_values, num_suits):
-    deck_values = [ num_cards_values * [True] for i in range(num_suits) ]
-    return deck_values, num_cards
+
+def init_pot(pot):
+    pot = [500, 500, 1000]
+    return pot
+
+(card_deck,num_cards) = init_deck(num_cards, num_suits, num_cards_values, reset_deck)
+pot = init_pot(pot)
+
+
+
